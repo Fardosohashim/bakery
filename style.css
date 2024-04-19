@@ -161,8 +161,8 @@ nav{
  .nav_menu{
   position: fixed;
   top: 0;
-  right: 0;
-  background-color: hsla(0, 0%, .2);
+  right: -100%;
+  background-color: hsla(0, 0%, 6% .2);
   backdrop-filter: blur(16px);
   width: 80%;
   height: 100%;
@@ -183,8 +183,29 @@ nav{
 .nav_link:hover{
   color: var(--first-color);
 }
+.nav_close,
+.nav_img1,
+.nav_img2{
+  position: absolute;
+}
+.nav_close{
+  top: 1rem;
+  right: 1.5rem;
+}
+.nav_img1{
+  width: 80px;
+  top: 11rem;
+  right: .75rem;
+}
+.nav_img2{
+  width: 60px;
+  top: 28rem;
+  left: 6rem;
+}
 /* Show menu */
-
+.show-menu{
+  right: 0;
+}
 
 /* Add blur header */
 
