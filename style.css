@@ -208,7 +208,17 @@ nav{
 }
 
 /* Add blur header */
-
+.blur-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(0, 0%, 6% .2);
+  backdrop-filter: blur(16px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* Active link */
 
@@ -294,7 +304,17 @@ background: linear-gradient(180deg,
   color: var(--first-color);
 }
 /*=============== BUTTON ===============*/
-
+.button{
+ display: inline-flex;
+ background-color: var(--first-color);
+ color: var(--black-color);
+ font-weight: var(--font-semi-bold);
+padding: 1.125rem 2rem;
+transition: background-color .4s;
+}
+.button:hover{
+  background-color: var(--first-color-alt);
+}
 
 /*=============== NEW ===============*/
 

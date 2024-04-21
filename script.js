@@ -16,7 +16,7 @@ if(navClose){
     })
 }
 /*=============== REMOVE MENU MOBILE ===============*/
-const navLink =document.querySelectorAll('.nav_link')
+const navLink = document.querySelectorAll('.nav_link')
  const linkAction = () =>{
 
    const navMenu = document.getElementById('nav-menu')
@@ -25,7 +25,13 @@ const navLink =document.querySelectorAll('.nav_link')
  }
  navLink.forEach(n => n.addEventListener('click', linkAction))
 /*=============== ADD BLUR HEADER ===============*/
-
+const blurHeader = () =>{
+    const header = document.getElementById('header')
+    //when the scroll is greater than 50 viewport height, add the header
+    this.scrollY >= 50 ? header.classList.add('blur-header')
+                        :header.classList.remove('blur-header')
+}
+window.addEventListener('scroll', blurHeader)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
