@@ -34,9 +34,22 @@ const blurHeader = () =>{
 window.addEventListener('scroll', blurHeader)
 
 /*=============== SHOW SCROLL UP ===============*/ 
-
-
+const scrollup =() =>{
+const scrollup =document.getElementById('scrollup')
+this.scrollY >= 350 ? scrollup.classList.add('show-scroll')
+                    : scrollup.classList.remove('show-scroll') 
+}
+window.addEventListener('scroll, scrollup')
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections =document.querySelectorAll('section[id]')
+
+const scrollActive = () => {
+    const scrolldown = window.scrollY
+
+    sections.forEach(current => {
+        
+    })
+}
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
