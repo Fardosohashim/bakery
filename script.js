@@ -16,7 +16,7 @@ if(navClose){
     })
 }
 /*=============== REMOVE MENU MOBILE ===============*/
-const navLink =document.querySelectorAll('.nav_link')
+const navLink = document.querySelectorAll('.nav_link')
  const linkAction = () =>{
 
    const navMenu = document.getElementById('nav-menu')
@@ -25,12 +25,43 @@ const navLink =document.querySelectorAll('.nav_link')
  }
  navLink.forEach(n => n.addEventListener('click', linkAction))
 /*=============== ADD BLUR HEADER ===============*/
-
+const blurHeader = () =>{
+    const header = document.getElementById('header')
+    //when the scroll is greater than 50 viewport height, add the header
+    this.scrollY >= 50 ? header.classList.add('blur-header')
+                        :header.classList.remove('blur-header')
+}
+window.addEventListener('scroll', blurHeader)
 
 /*=============== SHOW SCROLL UP ===============*/ 
-
-
+const scrollup =() =>{
+const scrollup =document.getElementById('scrollup')
+this.scrollY >= 350 ? scrollup.classList.add('show-scroll')
+                    : scrollup.classList.remove('show-scroll') 
+}
+window.addEventListener('scroll, scrollup')
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections =document.querySelectorAll('section[id]')
+
+const scrollActive = () => {
+    const scrolldown = window.scrollY
+
+    sections.forEach(current => {
+     const sectionHeight = current.offsetHeight,
+          sectionTop = current.offsetTop - 58,
+          sectionId = current.getAttribute('id'),
+          sectionsClass = document.querySelector('.nav_menu a[href*=' + sectionId + ']')
+
+
+    if (scrolldown > sectionTop && scrolldown <= sectionTop +sectionHeight){
+        sectionsClass.classList.add('active-link')
+     }else{
+        sectionsClass.classList.remove('active-link')
+     }
+    })
+
+ }
+window.addEventListener('scroll', scrollActive)
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
