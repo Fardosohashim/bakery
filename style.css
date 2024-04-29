@@ -737,4 +737,8 @@ width: 250px;
   grid-template-columns: repeat(3, 240px);
   gap: 5.5rem 2rem;
 }
+.favorite_card{
+ padding: 9.75rem 1.5rem 2rem; 
+}
+
 }
