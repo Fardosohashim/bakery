@@ -39,12 +39,12 @@ const scrollup =document.getElementById('scrollup')
 this.scrollY >= 350 ? scrollup.classList.add('show-scroll')
                     : scrollup.classList.remove('show-scroll') 
 }
-window.addEventListener('scroll, scrollup')
+window.addEventListener('scroll', scrollup)
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections =document.querySelectorAll('section[id]')
+const sections = document.querySelectorAll('section[id]')
 
 const scrollActive = () => {
-    const scrolldown = window.scrollY
+    const scrollDown = window.scrollY
 
     sections.forEach(current => {
      const sectionHeight = current.offsetHeight,
@@ -53,7 +53,7 @@ const scrollActive = () => {
           sectionsClass = document.querySelector('.nav_menu a[href*=' + sectionId + ']')
 
 
-    if (scrolldown > sectionTop && scrolldown <= sectionTop +sectionHeight){
+    if (scrollDown > sectionTop && scrollDown <= sectionTop +sectionHeight){
         sectionsClass.classList.add('active-link')
      }else{
         sectionsClass.classList.remove('active-link')
@@ -65,3 +65,26 @@ window.addEventListener('scroll', scrollActive)
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = Scrolleveal({
+    origin: 'top',
+    distance: '40px',
+    opacity: 1,
+    scale: 1.1,
+    duration: 2500,
+    delay: 300,
+    //reset: true, //Animations repeat
+})
+sr.reveal(`.home_data, .about_img, .about_data, .visit_data`)
+
+sr.reveal(`.home_img, .footer_img1, .footer_img2`,{rotate: {z: -15} })
+sr.reveal(`.home_bread, .about_bread` ,{rotate: {z: 15} })
+sr.reveal(`.home_footer`,{scale: 1, origin: 'bottom'})
+
+
+sr.reveal(`.new_card:nth-child(1) img`,{rotate: {z: -30}, distance: 0 })
+sr.reveal(`.new_card:nth-child(2) img`,{rotate: {z: 15}, distance: 0, delay: 600 })
+sr.reveal(`.new_card:nth-child(3) img`,{rotate: {z: -30}, distance: 0, delay: 900 })
+
+sr.reveal(`.favorite_card img`, {interval: 100, rotate: {z: 15}, distance:0})
+
+sr.reveal(`.footer_container`, {scale: 1})
